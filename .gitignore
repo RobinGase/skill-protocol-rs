@@ -1,0 +1,24 @@
+# Build artefacts
+/target
+**/*.rs.bk
+*.pdb
+
+# Library crates do not commit lockfiles (per Rust convention).
+/Cargo.lock
+
+# Editors
+.vscode/
+.idea/
+*.swp
+
+# Local env / secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Macros / OS detritus
+.DS_Store
+Thumbs.db
+desktop.ini

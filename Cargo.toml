@@ -1,0 +1,21 @@
+[package]
+name = "skill-protocol"
+version = "0.1.0"
+edition = "2024"
+rust-version = "1.88"
+license = "MIT OR Apache-2.0"
+description = "JSON request/response protocol, path helpers, and report exporter for building Claude Code skill CLIs in Rust."
+repository = "https://github.com/RobinGase/skill-protocol-rs"
+homepage = "https://github.com/RobinGase/skill-protocol-rs"
+documentation = "https://docs.rs/skill-protocol"
+readme = "README.md"
+keywords = ["claude", "skill", "cli", "protocol", "anthropic"]
+categories = ["command-line-interface", "encoding"]
+
+[dependencies]
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+zip = { version = "2", default-features = false, features = ["deflate"] }
+
+[dev-dependencies]
+tempfile = "3"

@@ -1,0 +1,12 @@
+# Normalise line endings to LF in the repo. Working copies on Windows can
+# still use CRLF locally; Git converts at checkout/checkin time.
+* text=auto eol=lf
+
+# Binary files - do not touch.
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.zip binary
+*.xlsx binary
+*.pdf binary
