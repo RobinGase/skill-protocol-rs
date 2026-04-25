@@ -6,6 +6,7 @@
 //! exporter needs. Skills may extend the trait or layer their own traits
 //! on top for specific tools.
 
+use serde::{Deserialize, Serialize};
 use std::{env, path::PathBuf};
 
 /// Public surface a skill needs from its host's configuration system.
@@ -30,9 +31,12 @@ pub trait SkillConfig {
 /// A drop-in [`SkillConfig`] that reads its values from environment
 /// variables and otherwise yields `None`. Skills that don't need a
 /// host-supplied config can default to this.
-#[derive(Debug, Clone, Default)]
+#[derive(Debug, Clone, Default, Serialize, Deserialize)]
+#[serde(rename_all = "camelCase", default)]
 pub struct BasicSkillConfig {
+    #[serde(alias = "report_export_dir")]
     pub report_export_dir: Option<PathBuf>,
+    #[serde(alias = "report_default_format")]
     pub report_default_format: Option<String>,
 }
 
